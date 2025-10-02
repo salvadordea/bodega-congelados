@@ -23,8 +23,6 @@ export const Dashboard: React.FC = () => {
   });
   const monthlyRevenue = monthlyReservations.reduce((sum, r) => sum + r.total, 0);
 
-  // Active clients
-  const activeClientIds = new Set(reservations.filter((r) => r.status === 'active').map((r) => r.clientId));
 
   // Occupancy by section
   const sectionData = [
