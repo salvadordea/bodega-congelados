@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardContent } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
 import { Modal } from '../components/ui/Modal';
 import { Input } from '../components/ui/Input';
-import { Search, Plus, Calendar, MapPin, User, DollarSign, Edit, Trash2, RefreshCw } from 'lucide-react';
+import { Search, Plus, Calendar, MapPin, User, DollarSign, Trash2, RefreshCw } from 'lucide-react';
 import { format, addDays } from 'date-fns';
-import { es } from 'date-fns/locale';
 
 type FilterType = 'all' | 'active' | 'expired' | 'completed';
 

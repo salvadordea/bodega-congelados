@@ -29,7 +29,6 @@ export const NewReservation: React.FC = () => {
   const getSuggestedSpaces = (count: number): number[] => {
     if (count > availableSpaces.length) return [];
 
-    const suggestions: number[] = [];
     const sortedSpaces = [...availableSpaces].sort((a, b) => a.id - b.id);
 
     // Try to find contiguous spaces

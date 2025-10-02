@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
-import { Filter, Search } from 'lucide-react';
-import { Input } from '../components/ui/Input';
 import { Modal } from '../components/ui/Modal';
 
 type FilterType = 'all' | 'available' | 'reserved' | 'expiring-soon';
@@ -12,7 +10,6 @@ export const Spaces: React.FC = () => {
   const { spaces, clients, reservations } = useApp();
   const [filter, setFilter] = useState<FilterType>('all');
   const [selectedSpace, setSelectedSpace] = useState<number | null>(null);
-  const [searchTerm, setSearchTerm] = useState('');
 
   const filteredSpaces = spaces.filter((space) => {
     if (filter === 'all') return true;
@@ -32,7 +29,7 @@ export const Spaces: React.FC = () => {
     }
   };
 
-  const getSpaceTextColor = (status: string) => {
+  const getSpaceTextColor = () => {
     return 'text-white';
   };
 
@@ -133,9 +130,7 @@ export const Spaces: React.FC = () => {
                   <button
                     key={space.id}
                     onClick={() => setSelectedSpace(space.id)}
-                    className={`${getSpaceColor(space.status)} ${getSpaceTextColor(
-                      space.status
-                    )} p-3 rounded-lg font-semibold text-sm transition-all transform hover:scale-105 shadow-md`}
+                    className={`${getSpaceColor(space.status)} ${getSpaceTextColor()} p-3 rounded-lg font-semibold text-sm transition-all transform hover:scale-105 shadow-md`}
                   >
                     {space.id}
                   </button>
@@ -153,9 +148,7 @@ export const Spaces: React.FC = () => {
                   <button
                     key={space.id}
                     onClick={() => setSelectedSpace(space.id)}
-                    className={`${getSpaceColor(space.status)} ${getSpaceTextColor(
-                      space.status
-                    )} p-3 rounded-lg font-semibold text-sm transition-all transform hover:scale-105 shadow-md`}
+                    className={`${getSpaceColor(space.status)} ${getSpaceTextColor()} p-3 rounded-lg font-semibold text-sm transition-all transform hover:scale-105 shadow-md`}
                   >
                     {space.id}
                   </button>
@@ -173,9 +166,7 @@ export const Spaces: React.FC = () => {
                   <button
                     key={space.id}
                     onClick={() => setSelectedSpace(space.id)}
-                    className={`${getSpaceColor(space.status)} ${getSpaceTextColor(
-                      space.status
-                    )} p-3 rounded-lg font-semibold text-sm transition-all transform hover:scale-105 shadow-md`}
+                    className={`${getSpaceColor(space.status)} ${getSpaceTextColor()} p-3 rounded-lg font-semibold text-sm transition-all transform hover:scale-105 shadow-md`}
                   >
                     {space.id}
                   </button>
@@ -193,9 +184,7 @@ export const Spaces: React.FC = () => {
                   <button
                     key={space.id}
                     onClick={() => setSelectedSpace(space.id)}
-                    className={`${getSpaceColor(space.status)} ${getSpaceTextColor(
-                      space.status
-                    )} p-3 rounded-lg font-semibold text-sm transition-all transform hover:scale-105 shadow-md`}
+                    className={`${getSpaceColor(space.status)} ${getSpaceTextColor()} p-3 rounded-lg font-semibold text-sm transition-all transform hover:scale-105 shadow-md`}
                   >
                     {space.id}
                   </button>

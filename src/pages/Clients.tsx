@@ -4,10 +4,9 @@ import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card'
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Modal } from '../components/ui/Modal';
-import { Search, Plus, Mail, Phone, FileText, Calendar } from 'lucide-react';
+import { Search, Plus, Mail, Phone } from 'lucide-react';
 import { Badge } from '../components/ui/Badge';
 import { format } from 'date-fns';
-import { es } from 'date-fns/locale';
 
 export const Clients: React.FC = () => {
   const { clients, reservations, addClient } = useApp();
@@ -237,7 +236,7 @@ export const Clients: React.FC = () => {
                 <div>
                   <p className="text-sm text-gray-600">Cliente desde</p>
                   <p className="font-medium">
-                    {format(new Date(selectedClientData.createdAt), 'dd MMM yyyy', { locale: es })}
+                    {format(new Date(selectedClientData.createdAt), 'dd MMM yyyy')}
                   </p>
                 </div>
               </div>

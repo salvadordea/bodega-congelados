@@ -3,8 +3,7 @@ import { useApp } from '../context/AppContext';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
 import { TrendingUp, Package, DollarSign, AlertCircle, Users } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay } from 'date-fns';
-import { es } from 'date-fns/locale';
+import { format } from 'date-fns';
 
 export const Dashboard: React.FC = () => {
   const { spaces, reservations, clients } = useApp();
@@ -184,7 +183,7 @@ export const Dashboard: React.FC = () => {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, value, percent }) => `${name}: ${value} (${(percent * 100).toFixed(0)}%)`}
+                  label={({ name, value, percent }: any) => `${name}: ${value} (${(percent * 100).toFixed(0)}%)`}
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="value"

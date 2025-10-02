@@ -3,9 +3,8 @@ import { useApp } from '../context/AppContext';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Select } from '../components/ui/Input';
-import { FileText, Download, Printer, Snowflake } from 'lucide-react';
+import { Download, Printer, Snowflake } from 'lucide-react';
 import { format } from 'date-fns';
-import { es } from 'date-fns/locale';
 import jsPDF from 'jspdf';
 
 export const Tickets: React.FC = () => {
@@ -41,7 +40,7 @@ export const Tickets: React.FC = () => {
 
     doc.setFontSize(10);
     doc.text(`Folio: ${selectedReservation.id}`, 15, 65);
-    doc.text(`Fecha: ${format(new Date(), 'dd/MM/yyyy HH:mm', { locale: es })}`, 15, 72);
+    doc.text(`Fecha: ${format(new Date(), 'dd/MM/yyyy HH:mm')}`, 15, 72);
 
     // Client Info
     doc.setFontSize(14);
@@ -58,8 +57,8 @@ export const Tickets: React.FC = () => {
     doc.text('DETALLES DE LA RESERVACIÓN', 15, 140);
 
     doc.setFontSize(10);
-    doc.text(`Fecha Inicio: ${format(new Date(selectedReservation.startDate), 'dd/MM/yyyy', { locale: es })}`, 15, 150);
-    doc.text(`Fecha Fin: ${format(new Date(selectedReservation.endDate), 'dd/MM/yyyy', { locale: es })}`, 15, 157);
+    doc.text(`Fecha Inicio: ${format(new Date(selectedReservation.startDate), 'dd/MM/yyyy')}`, 15, 150);
+    doc.text(`Fecha Fin: ${format(new Date(selectedReservation.endDate), 'dd/MM/yyyy')}`, 15, 157);
     doc.text(`Días Totales: ${selectedReservation.totalDays}`, 15, 164);
 
     // Spaces
@@ -174,7 +173,7 @@ export const Tickets: React.FC = () => {
       {/* Ticket Preview */}
       {selectedReservation && selectedClient && (
         <>
-          <Card className="print:shadow-none" id="ticket-preview">
+          <Card className="print:shadow-none">
             <CardContent className="p-8">
               {/* Header */}
               <div className="bg-gradient-to-r from-ice-600 to-blue-600 -mx-8 -mt-8 px-8 py-6 mb-8 print:bg-ice-600">
@@ -199,7 +198,7 @@ export const Tickets: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-600">Fecha de Emisión:</p>
-                    <p className="font-semibold">{format(new Date(), 'dd MMMM yyyy, HH:mm', { locale: es })}</p>
+                    <p className="font-semibold">{format(new Date(), 'dd MMMM yyyy, HH:mm')}</p>
                   </div>
                 </div>
               </div>
@@ -234,13 +233,13 @@ export const Tickets: React.FC = () => {
                   <div>
                     <p className="text-sm text-gray-600">Fecha Inicio:</p>
                     <p className="font-semibold">
-                      {format(new Date(selectedReservation.startDate), 'dd MMMM yyyy', { locale: es })}
+                      {format(new Date(selectedReservation.startDate), 'dd MMMM yyyy')}
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Fecha Fin:</p>
                     <p className="font-semibold">
-                      {format(new Date(selectedReservation.endDate), 'dd MMMM yyyy', { locale: es })}
+                      {format(new Date(selectedReservation.endDate), 'dd MMMM yyyy')}
                     </p>
                   </div>
                   <div>
