@@ -1,4 +1,4 @@
-import { Client, Reservation, Space, PricingConfig } from '../types';
+import type { Client, Reservation, Space, PricingConfig } from '../types';
 import { addDays, subDays } from 'date-fns';
 
 export const pricingConfig: PricingConfig = {
@@ -222,7 +222,6 @@ const calculateReservation = (
   const total = subtotal + tax;
 
   const now = new Date();
-  const daysUntilExpiry = Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
 
   let status: 'active' | 'completed' | 'expired' = 'active';
   if (endDate < now) {

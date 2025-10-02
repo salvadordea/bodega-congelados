@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Client, Reservation, Space } from '../types';
+import type { Client, Reservation, Space } from '../types';
 import { mockClients, mockReservations, generateSpaces } from '../data/mockData';
 
 interface AppContextType {

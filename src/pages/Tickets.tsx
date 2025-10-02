@@ -74,11 +74,11 @@ export const Tickets: React.FC = () => {
     doc.rect(15, costY, pageWidth - 30, 7, 'F');
 
     doc.setFontSize(12);
-    doc.setFont(undefined, 'bold');
+    doc.setFont('helvetica', 'bold');
     doc.text('CONCEPTO', 20, costY + 5);
     doc.text('IMPORTE', pageWidth - 50, costY + 5);
 
-    doc.setFont(undefined, 'normal');
+    doc.setFont('helvetica', 'normal');
     doc.setFontSize(10);
 
     let currentY = costY + 15;
@@ -101,14 +101,14 @@ export const Tickets: React.FC = () => {
     currentY += 10;
 
     // Subtotal
-    doc.setFont(undefined, 'bold');
+    doc.setFont('helvetica', 'bold');
     doc.text('SUBTOTAL:', 20, currentY);
     doc.text(`$${selectedReservation.subtotal.toLocaleString('es-MX', { minimumFractionDigits: 2 })}`, pageWidth - 50, currentY, { align: 'right' });
 
     currentY += 7;
 
     // Tax
-    doc.setFont(undefined, 'normal');
+    doc.setFont('helvetica', 'normal');
     doc.text('IVA (16%):', 20, currentY);
     doc.text(`$${selectedReservation.tax.toLocaleString('es-MX', { minimumFractionDigits: 2 })}`, pageWidth - 50, currentY, { align: 'right' });
 
@@ -120,14 +120,14 @@ export const Tickets: React.FC = () => {
 
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(14);
-    doc.setFont(undefined, 'bold');
+    doc.setFont('helvetica', 'bold');
     doc.text('TOTAL:', 20, currentY + 2);
     doc.text(`$${selectedReservation.total.toLocaleString('es-MX', { minimumFractionDigits: 2 })} MXN`, pageWidth - 50, currentY + 2, { align: 'right' });
 
     // Footer
     doc.setTextColor(100, 100, 100);
     doc.setFontSize(8);
-    doc.setFont(undefined, 'normal');
+    doc.setFont('helvetica', 'normal');
     doc.text('Gracias por su preferencia', pageWidth / 2, doc.internal.pageSize.getHeight() - 20, { align: 'center' });
     doc.text('FreezeStore - Sistema de Gestión de Bodega de Congelados', pageWidth / 2, doc.internal.pageSize.getHeight() - 15, { align: 'center' });
 

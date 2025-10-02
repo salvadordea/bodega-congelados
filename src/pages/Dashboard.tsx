@@ -3,7 +3,6 @@ import { useApp } from '../context/AppContext';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
 import { TrendingUp, Package, DollarSign, AlertCircle, Users } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { format } from 'date-fns';
 
 export const Dashboard: React.FC = () => {
   const { spaces, reservations, clients } = useApp();
@@ -26,7 +25,6 @@ export const Dashboard: React.FC = () => {
 
   // Active clients
   const activeClientIds = new Set(reservations.filter((r) => r.status === 'active').map((r) => r.clientId));
-  const activeClients = activeClientIds.size;
 
   // Occupancy by section
   const sectionData = [

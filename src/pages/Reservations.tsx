@@ -291,13 +291,13 @@ export const Reservations: React.FC = () => {
               <div>
                 <p className="text-sm text-gray-600">Fecha Inicio</p>
                 <p className="font-medium">
-                  {format(new Date(selectedReservationData.startDate), 'dd MMMM yyyy', { locale: es })}
+                  {format(new Date(selectedReservationData.startDate), 'dd MMMM yyyy')}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-gray-600">Fecha Fin</p>
                 <p className="font-medium">
-                  {format(new Date(selectedReservationData.endDate), 'dd MMMM yyyy', { locale: es })}
+                  {format(new Date(selectedReservationData.endDate), 'dd MMMM yyyy')}
                 </p>
               </div>
               <div>
